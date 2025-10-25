@@ -20,6 +20,7 @@ Perfect for keeping an eye on system performance while gaming, developing, or ru
 ## Screenshots
 
 <img alt="PerformanceMonitorWidget screenshot" src="docs/screenshot.png" height="500" />
+
 *The overlay displays in the top-right corner showing CPU, memory, and disk metrics*
 
 ## Requirements
