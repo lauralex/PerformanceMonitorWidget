@@ -160,7 +160,21 @@ void Gui::RenderPerformanceWindow() const
 	char        cpuBuf[32];
 	(void)sprintf_s(cpuBuf, "%.1f%%", cpu);
 	ImGui::Text("CPU");
-	ImGui::ProgressBar(cpu / 100.0f, ImVec2(-1.0f, 0.0f), cpuBuf);
+	ImGui::ProgressBar(cpu / 100.0f, ImVec2(-1.0f, 0.0f), cpuBuf); // Show CPU usage bar
+	// CPU usage history graph
+	static float cpuHistory[90] = {}; // 90 frames of history
+	static int   historyIndex   = 0;
+	static bool  filled         = false;
+	// Update history buffer
+	cpuHistory[historyIndex] = cpu;
+	if (historyIndex == 89)
+	{
+		filled = true;
+	}
+	historyIndex = (historyIndex + 1) % 90;
+	// Render graph
+	ImGui::PlotLines("", cpuHistory, 90, filled ? historyIndex : 0, "CPU Graph", 0.0f, 100.0f,
+	                 ImVec2(-1.0f, 50.0f));
 
 	ImGui::Spacing();
 
@@ -169,7 +183,7 @@ void Gui::RenderPerformanceWindow() const
 	char        memBuf[32];
 	(void)sprintf_s(memBuf, "%.1f%%", mem);
 	ImGui::Text("MEM");
-	ImGui::ProgressBar(mem / 100.0f, ImVec2(-1.0f, 0.0f), memBuf);
+	ImGui::ProgressBar(mem / 100.0f, ImVec2(-1.0f, 0.0f), memBuf); // Show Memory usage bar
 
 	ImGui::Spacing();
 
@@ -178,7 +192,7 @@ void Gui::RenderPerformanceWindow() const
 	char        diskBuf[32];
 	(void)sprintf_s(diskBuf, "%.1f%%", disk);
 	ImGui::Text("DISK");
-	ImGui::ProgressBar(disk / 100.0f, ImVec2(-1.0f, 0.0f), diskBuf);
+	ImGui::ProgressBar(disk / 100.0f, ImVec2(-1.0f, 0.0f), diskBuf); // Show Disk usage bar
 
 	ImGui::End();
 
