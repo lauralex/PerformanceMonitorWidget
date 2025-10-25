@@ -1,6 +1,6 @@
 # PerformanceMonitorWidget
 
-A lightweight, always-on-top performance monitoring overlay for Windows. Built with C++ using Direct3D 11 and Dear ImGui.
+A lightweight, always-on-top performance monitoring overlay for Windows. Built with C++ using Direct3D 11 and Dear ImGui. [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/lauralex/PerformanceMonitorWidget)
 
 ## Overview
 
