@@ -96,7 +96,6 @@ PerformanceMonitorWidget/
 ## Known Limitations
 
 - Windows-only
-- May require administrator privileges for some performance counters
 - Fixed position (not draggable)
 - Single monitor support
 
