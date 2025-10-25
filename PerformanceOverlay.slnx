@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="PerformanceOverlay/PerformanceOverlay.vcxproj" Id="96e1aff5-71fd-4a02-870a-3bed47df591c" />
+</Solution>
